@@ -210,8 +210,8 @@ public class LogGen {
 
     public static void main(String[] args) throws SQLException, IOException {
 //        dowrite();
-        dogen();
-//        dowritejson();
+//        dogen();
+        dowritejson();
     }
 
     private static void dogen() throws SQLException {
