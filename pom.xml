@@ -17,6 +17,8 @@
     <hadoop.version>2.6.5</hadoop.version>
     <scala.version>2.11</scala.version>
     <hbase.version>1.2.8</hbase.version>
+    <kafka.version>0.10.2.2</kafka.version>
+    <zookeeper.version>3.4.5</zookeeper.version>
   </properties>
 
   <dependencies>
@@ -26,6 +28,11 @@
       <version>${hadoop.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>${kafka.version}</version>
+    </dependency>
     <!--<dependency>
       <groupId>com.hortonworks</groupId>
       <artifactId>shc</artifactId>
