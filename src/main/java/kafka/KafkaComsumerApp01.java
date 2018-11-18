@@ -15,8 +15,8 @@ public class KafkaComsumerApp01 {
     public static void main(String[] args) {
 
         Properties prop = new Properties();
+        //多个broker，用逗号分割
         prop.put("bootstrap.servers", "localhost:9092");
-        prop.put("zookeeper", "localhost:2181");
         prop.put("group.id", "test-1");
         prop.put("enable.auto.commit", "true");
         prop.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");

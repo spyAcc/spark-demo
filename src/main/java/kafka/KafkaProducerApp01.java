@@ -14,6 +14,7 @@ public class KafkaProducerApp01 {
     public static void main(String[] args) {
 
         Properties prop = new Properties();
+        //多个broker，用逗号分隔
         prop.put("bootstrap.servers", "localhost:9092");
         prop.put("batch.size", 5);
         prop.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
