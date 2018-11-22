@@ -1,8 +1,12 @@
 package com.spy.spark;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import data.MessageBean;
+import data.MessageResultBean;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.spark.streaming.Duration;
+import org.apache.spark.SparkConf;
+import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
@@ -20,26 +24,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * kafka streaming整合，处理数据，并写入hbase
+ * kafka streaming整合，json解析，groupbykey分组，最后拼接字符串
  */
 public class SparkStreamingApp01 {
 
     private static final Logger logger = LoggerFactory.getLogger(SparkStreamingApp01.class);
 
+    private static final String topic = "message-shuffle";
+
     public static void main(String[] args) throws InterruptedException {
 
-        JavaStreamingContext jc = new JavaStreamingContext("local[2]", "SparkStreamingApp01", new Duration(5000));
+        SparkConf sc = new SparkConf();
+        sc.setAppName("SparkStreamingApp01");
+        sc.setMaster("local[2]");
+        sc.set("spark.local.dir","D:/hadoop/hadoop-2.6.5/sparklocal");
+
+        JavaStreamingContext jc = new JavaStreamingContext(sc, Durations.seconds(20));
 
         Map<String, Object> kafkaParams = new HashMap<String, Object>();
         kafkaParams.put("bootstrap.servers", "localhost:9092");
         kafkaParams.put("key.deserializer", StringDeserializer.class);
         kafkaParams.put("value.deserializer", StringDeserializer.class);
-        kafkaParams.put("group.id", "streaming-test");
+        kafkaParams.put("group.id", "streaming-message");
         kafkaParams.put("auto.offset.reset", "latest");
         kafkaParams.put("enable.auto.commit", false);
 
 
-        Collection<String> topics = Arrays.asList("test");
+        Collection<String> topics = Arrays.asList(topic);
 
         JavaInputDStream<ConsumerRecord<String, String>> stream
                 = KafkaUtils.createDirectStream(
@@ -49,19 +60,37 @@ public class SparkStreamingApp01 {
         );
 
 
-        JavaPairDStream<String, String> pairStream = stream.mapToPair(record -> new Tuple2<>(record.key(), record.value()));
-
-        JavaDStream<String> jDstream =  pairStream.map( pair -> {
-            return pair._2;
+        JavaPairDStream<String, MessageBean> pairStream = stream.mapToPair(record -> {
+            ObjectMapper obm = new ObjectMapper();
+            MessageBean mb = obm.readValue(record.value(), MessageBean.class);
+            return new Tuple2<>(mb.getKey(), mb);
         });
 
+
+        JavaPairDStream<String, Iterable<MessageBean>> groupStream = pairStream.groupByKey();
+
+        JavaDStream<MessageResultBean> jDstream = groupStream.map(tuple -> {
+
+            Iterable<MessageBean> it = tuple._2;
+
+            //字符串拼接
+            StringBuffer sb = new StringBuffer();
+
+            for (MessageBean mb: it) {
+                sb.append(mb.getValue());
+            }
+
+            MessageResultBean mrb = new MessageResultBean();
+            mrb.setKey(tuple._1);
+            mrb.setValue(sb.toString());
+
+            return mrb;
+        });
 
         jDstream.foreachRDD(rdd -> {
 
             rdd.foreach(v -> {
-                logger.info(v);
-                //这里可以保存到hbase
-
+                logger.info(v.getKey() + "---" + v.getValue());
 
             });
         });
