@@ -22,7 +22,7 @@ public class KafkaProducerApp01 {
 
         Producer<String, String> producer = new KafkaProducer<String, String>(prop);
         for(int i = 101; i < 200; i++) {
-            producer.send(new ProducerRecord<>("test", Integer.toString(i), Integer.toString(i) ));
+            producer.send(new ProducerRecord<>("message-shuffle", Integer.toString(i), Integer.toString(i) ));
             System.out.println(i);
         }
 
