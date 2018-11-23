@@ -2,11 +2,14 @@ package com.spy.spark;
 
 import com.spy.spark.util.KafkaParams;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.Optional;
+import org.apache.spark.api.java.function.Function3;
 import org.apache.spark.streaming.Durations;
+import org.apache.spark.streaming.State;
+import org.apache.spark.streaming.StateSpec;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
+import org.apache.spark.streaming.api.java.JavaMapWithStateDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.kafka010.ConsumerStrategies;
@@ -19,9 +22,9 @@ import scala.Tuple2;
 import java.util.Arrays;
 
 /**
- * spark-streaming kafka, updatestatebykey(mapwithstate)的应用，状态流wordcount
+ * spark mapwithstate
  */
-public class SparkStreamingApp02 {
+public class SparkStreamingApp03 {
 
     private static final Logger logger = LoggerFactory.getLogger(SparkStreamingApp02.class);
 
@@ -54,30 +57,23 @@ public class SparkStreamingApp02 {
                 .mapToPair(word -> new Tuple2<String, Integer>(word, 1));
 
 
-        JavaPairDStream<String, Integer> wordcount = words.updateStateByKey((valuelist, oldState) -> {
+        Function3<String, Optional<Integer>, State<Integer>, Tuple2<String, Integer>> mapFuc =
+                (w, one, state) -> {
 
-            Integer newState = 0;
-
-            if(oldState.isPresent()) {
-                newState = oldState.get();
-            }
-
-            for(Integer v:valuelist) {
-                newState += v;
-            }
-
-            return Optional.of(newState);
-        });
+                    int sum = one.orElse(0) + (state.exists() ? state.get(): 0);
+                    Tuple2<String, Integer> out = new Tuple2<>(w, sum);
+                    state.update(sum);
+                    return out;
+                };
 
 
-        wordcount.foreachRDD(rdd -> {
+        JavaMapWithStateDStream<String, Integer, Integer, Tuple2<String, Integer>> wordcount
+                = words.mapWithState(StateSpec.function(mapFuc));
 
-            rdd.foreach(ty -> {
-                logger.info(ty._1 + ": " + ty._2);
-            });
 
-        });
 
+        //全量输出
+        wordcount.stateSnapshots().print();
 
 
         jsc.start();
@@ -90,6 +86,5 @@ public class SparkStreamingApp02 {
         }
 
     }
-
 
 }
