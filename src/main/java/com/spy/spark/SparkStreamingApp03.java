@@ -56,8 +56,20 @@ public class SparkStreamingApp03 {
                 .flatMap(line -> Arrays.asList(line.split(" ")).iterator())
                 .mapToPair(word -> new Tuple2<String, Integer>(word, 1));
 
-
+        /**
+         *
+         * 1： key的类型
+         * 2： value的类型
+         * 3： value的状态，可以更新的值，可以传到下次批次
+         * 4： 返回值
+         *
+         */
         Function3<String, Optional<Integer>, State<Integer>, Tuple2<String, Integer>> mapFuc =
+                /**
+                 * w:key值
+                 * one： 新的value值
+                 * state： 上次传来的value值
+                 */
                 (w, one, state) -> {
 
                     int sum = one.orElse(0) + (state.exists() ? state.get(): 0);

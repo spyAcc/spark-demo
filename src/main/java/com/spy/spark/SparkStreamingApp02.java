@@ -19,7 +19,7 @@ import scala.Tuple2;
 import java.util.Arrays;
 
 /**
- * spark-streaming kafka, updatestatebykey(mapwithstate)的应用，状态流wordcount
+ * spark-streaming kafka, updatestatebykey的应用，状态流wordcount
  */
 public class SparkStreamingApp02 {
 
@@ -53,7 +53,12 @@ public class SparkStreamingApp02 {
                 .flatMap(line -> Arrays.asList(line.split(" ")).iterator())
                 .mapToPair(word -> new Tuple2<String, Integer>(word, 1));
 
-
+        /**
+         *
+         * valuelist: 新的值
+         * oldstate： 旧的值
+         *
+         */
         JavaPairDStream<String, Integer> wordcount = words.updateStateByKey((valuelist, oldState) -> {
 
             Integer newState = 0;
