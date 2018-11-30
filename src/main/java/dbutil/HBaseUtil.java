@@ -61,7 +61,11 @@ public class HBaseUtil {
     private HBaseUtil() {
         //需要hbase-site.xml文件在resources下面
         configuration = HBaseConfiguration.create();
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        configuration.set("hbase.rootdir", "file:///D:/hadoop/hbase-1.2.8/hdata/root");
+        configuration.set("hbase.zookeeper.quorum", "127.0.0.1");
+        configuration.set("hbase.zookeeper.property.clientPort", "2181");
+
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         try {
             if(connection == null || connection.isClosed()) {
@@ -368,6 +372,18 @@ public class HBaseUtil {
     }
 
 
+    public static void main(String[] args) {
+
+        HBaseUtil hBaseUtil = HBaseUtil.getHbaseUtilInstance();
+
+        System.out.println("start code");
+        Map<String, Map<String, String>> res = hBaseUtil.getRow("test", "row1");
+        System.out.println(hBaseUtil.printMap2(res));
+        System.out.println("end code");
+
+        hBaseUtil.close();
+
+    }
 
 
 
