@@ -1,5 +1,7 @@
 package dbutil;
 
+import data.MessageBean;
+import data.MessageGen;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -65,11 +67,11 @@ public class HBaseUtil {
         configuration.set("hbase.zookeeper.quorum", "127.0.0.1");
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//        executorService = Executors.newFixedThreadPool(3);
 
         try {
             if(connection == null || connection.isClosed()) {
-                connection = ConnectionFactory.createConnection(configuration, executorService);
+                connection = ConnectionFactory.createConnection(configuration);
             }
         } catch (IOException e) {
             logger.error("hbase get connection error: ", e);
@@ -80,7 +82,7 @@ public class HBaseUtil {
 
     public void close() {
         try {
-            if(connection != null) {
+            if(connection != null || !connection.isClosed()) {
                 connection.close();
             }
         } catch (IOException e) {
@@ -377,9 +379,39 @@ public class HBaseUtil {
         HBaseUtil hBaseUtil = HBaseUtil.getHbaseUtilInstance();
 
         System.out.println("start code");
-        Map<String, Map<String, String>> res = hBaseUtil.getRow("test", "row1");
-        System.out.println(hBaseUtil.printMap2(res));
+
+        MessageGen mg = new MessageGen();
+        List<MessageBean> message = mg.genMsgs(3);
+
+
+
+        Map<String, Map<String, Map<String, String>>> row = new HashMap<>();
+
+
+
+        int i = 1;
+        for(MessageBean mb: message) {
+            Map<String, String> kvdata = new HashMap<>();
+            kvdata.put("key", mb.getKey());
+            kvdata.put("value", mb.getValue());
+            kvdata.put("sort", String.valueOf(mb.getSort()));
+            kvdata.put("len", String.valueOf(mb.getLen()));
+
+            Map<String, Map<String, String>> rowdata = new HashMap<>();
+            rowdata.put("info", kvdata);
+
+            row.put("" + i, rowdata);
+            i++;
+        }
+
+        hBaseUtil.put("mgs", row);
+
+        System.out.println(hBaseUtil.printMap3(hBaseUtil.get("mgs")));
+
+
         System.out.println("end code");
+
+
 
         hBaseUtil.close();
 
