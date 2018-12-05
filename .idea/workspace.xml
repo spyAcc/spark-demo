@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="391ef6a1-c6a9-4d61-a413-98180748ad2d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbutil/HBaseUtil.java" afterPath="$PROJECT_DIR$/src/main/java/dbutil/HBaseUtil.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dbutil/HBaseUtil.class" afterPath="$PROJECT_DIR$/target/classes/dbutil/HBaseUtil.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java" afterPath="$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,41 +28,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="HBaseUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dbutil/HBaseUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SparkStreamingMessageMerge.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SparkStreamingMessageMerge.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="223">
+              <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkStreamingApp02.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SparkRddApp02.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkRddApp02.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparkRddApp03.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkRddApp03.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparkStreamingApp02.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp02.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="506">
+              <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KafkaParams.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/util/KafkaParams.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state relative-caret-position="391">
+              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -72,8 +81,8 @@
       <file leaf-file-name="KafkaProducerMessageShuffle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/prj/KafkaProducerMessageShuffle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="106" column="25" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+            <state relative-caret-position="554">
+              <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2222#2238#0" expanded="true" />
@@ -87,8 +96,8 @@
       <file leaf-file-name="kafkaProducerConfig.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/kafkaProducerConfig.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -146,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/main/java/kafka/KafkaProducerApp04.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spy/spark/util/KafkaParams.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp04.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp02.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp03.java" />
         <option value="$PROJECT_DIR$/src/main/java/kafka/KafkaComsumerApp01.java" />
         <option value="$PROJECT_DIR$/src/main/java/kafka/KafkaProducerApp01.java" />
@@ -154,11 +162,12 @@
         <option value="$PROJECT_DIR$/src/main/java/dbutil/PropertiesUtil.java" />
         <option value="src:table:/2a2bcd19/cb8d58a0-b936-47bf-a01c-6c7432fc8b89/spark.message" />
         <option value="$PROJECT_DIR$/src/main/java/prj/KafkaProducerMessageShuffle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hbaseConfig.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hbase-site.xml" />
         <option value="$PROJECT_DIR$/src/main/java/dbutil/HBaseUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp02.java" />
+        <option value="$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java" />
       </list>
     </option>
   </component>
@@ -201,15 +210,22 @@
           <item name="org.apache.hbase:hbase-client:1.2.8" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
           <item name="org.apache.hbase:hbase-common:1.2.8" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="hdfs" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="org.apache.hbase:hbase-client:1.2.8" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+          <item name="org.apache.hbase:hbase-protocol:1.2.8" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="102" />
-    <option name="y" value="10" />
-    <option name="width" value="1594" />
-    <option name="height" value="1005" />
+    <option name="x" value="243" />
+    <option name="y" value="24" />
+    <option name="width" value="1627" />
+    <option name="height" value="992" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -267,30 +283,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hdfs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hdfs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dbutil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hdfs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hdfs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hdfs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hdfs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="prj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,6 +291,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hdfs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hdfs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hdfs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hdfs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -320,6 +325,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/WorkSpace/ProgramJava/sparktest/hdfs/src/main/java/kafka/KafkaProducerApp01.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../member/pom.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -553,12 +559,12 @@
       <workItem from="1542267504171" duration="19648000" />
       <workItem from="1542617473002" duration="44475000" />
       <workItem from="1543215822168" duration="36265000" />
-      <workItem from="1543500860728" duration="12243000" />
+      <workItem from="1543500860728" duration="24545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172346000" />
+    <option name="totallyTimeSpent" value="184648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -581,9 +587,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40165877" sideWeight="0.5026316" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15723684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3945268" sideWeight="0.49736843" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277897" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30444697" sideWeight="0.49736843" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.350057" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -722,30 +728,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/MessageResultBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#182#183#0" expanded="false" />
-            <element signature="e#208#209#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#276#277#0" expanded="false" />
-            <element signature="e#308#309#0" expanded="false" />
-            <element signature="e#336#337#0" expanded="false" />
-            <element signature="e#378#379#0" expanded="false" />
-            <element signature="e#412#413#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.11/2.3.2/spark-core_2.11-2.3.2.jar!/org/apache/spark/storage/DiskBlockManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.11/2.3.2/spark-core_2.11-2.3.2.jar!/org/apache/spark/api/java/AbstractJavaRDDLike.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -956,30 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkRddApp02.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkRddApp03.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="26" column="49" lean-forward="true" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp01.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kafka/KafkaProducerApp01.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -992,14 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp03.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1041,10 +991,148 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.2.8/hbase-client-1.2.8.jar!/org/apache/hadoop/hbase/client/Table.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <marker date="1541658528695" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1541658528695" expanded="false" signature="154:951" ph="..." />
+            <marker date="1541658528695" expanded="true" signature="953:970" ph="@{...}" />
+            <marker date="1541658528695" expanded="true" signature="1356:1374" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="1612:1630" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="3547:3565" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="3618:3636" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cb8d58a0-b936-47bf-a01c-6c7432fc8b89/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.2.8/hbase-client-1.2.8.jar!/org/apache/hadoop/hbase/client/Result.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="364" column="40" lean-forward="false" selection-start-line="364" selection-start-column="40" selection-end-line="364" selection-end-column="40" />
+          <folding>
+            <marker date="1541658528695" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1541658528695" expanded="false" signature="154:1096" ph="..." />
+            <marker date="1541658528695" expanded="true" signature="1098:1113" ph="@{...}" />
+            <marker date="1541658528695" expanded="false" signature="1790:1801" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="1813:1819" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="1858:2049" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="2055:2073" ph="/**...*/" />
+            <marker date="1541658528695" expanded="false" signature="2125:2136" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="2177:2183" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="2189:2207" ph="/**...*/" />
+            <marker date="1541658528695" expanded="false" signature="2261:2272" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="2349:2355" ph=" }" />
+            <marker date="1541658528695" expanded="false" signature="2406:2417" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="2453:2459" ph=" }" />
+            <marker date="1541658528695" expanded="false" signature="2526:2537" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="2573:2579" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="2662:2721" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="2821:3001" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="3048:3059" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="3110:3116" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="3195:3254" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="3350:3490" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="3573:3879" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="3908:4094" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="4124:4135" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="4153:4159" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="4165:4183" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="4228:4436" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="4471:4482" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="4544:4550" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="4556:4574" ph="/**...*/" />
+            <marker date="1541658528695" expanded="false" signature="4623:4634" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="4691:4697" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="4703:4721" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="4807:4899" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="4971:5521" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="5599:5899" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="6029:6783" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="6789:6807" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="6893:6989" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="7060:7456" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="7462:7480" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="7618:7750" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="7873:8341" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="8403:8533" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="8611:8853" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="8983:9222" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="9333:9434" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="9597:9890" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="9967:10076" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="10205:10365" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="10439:10545" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="10671:10832" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="10901:10998" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="11119:11230" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="11323:12852" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="12329:12416" ph="compare(l1, l2) → {" />
+            <marker date="1541658528695" expanded="false" signature="12490:12517" ph="}" />
+            <marker date="1541658528695" expanded="true" signature="12934:14092" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="14162:15074" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="15101:15112" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="15178:15184" ph=" }" />
+            <marker date="1541658528695" expanded="false" signature="15214:15225" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="15277:15283" ph=" }" />
+            <marker date="1541658528695" expanded="false" signature="15306:15317" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="15367:15373" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="15404:16116" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="16199:17017" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="17113:18365" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="18425:18801" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="18842:18969" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="19008:19072" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="19100:19261" ph="{...}" />
+            <marker date="1541658528695" expanded="true" signature="19292:19736" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="19768:19779" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="19798:19804" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="19848:19915" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="19945:19956" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="19974:19980" ph=" }" />
+            <marker date="1541658528695" expanded="false" signature="20012:20023" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="20043:20049" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="20055:20073" ph="/**...*/" />
+            <marker date="1541658528695" expanded="true" signature="20078:20102" ph="@{...}" />
+            <marker date="1541658528695" expanded="true" signature="20157:20226" ph="{...}" />
+            <marker date="1541658528695" expanded="false" signature="20297:20308" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="20331:20337" ph=" }" />
+            <marker date="1541658528695" expanded="false" signature="20376:20387" ph=" { " />
+            <marker date="1541658528695" expanded="false" signature="20405:20411" ph=" }" />
+            <marker date="1541658528695" expanded="true" signature="20446:20592" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbutil/HBaseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkSqlApp06.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="40" column="51" lean-forward="false" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/1.2.8/hbase-common-1.2.8.jar!/org/apache/hadoop/hbase/HBaseConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="216">
+          <caret line="60" column="37" lean-forward="false" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
           <folding>
             <marker date="1541658529295" expanded="false" signature="0:104" ph="/.../" />
             <marker date="1541658529295" expanded="false" signature="147:805" ph="..." />
@@ -1071,34 +1159,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.2.8/hbase-client-1.2.8.jar!/org/apache/hadoop/hbase/client/Table.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-          <folding>
-            <marker date="1541658528695" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1541658528695" expanded="false" signature="154:951" ph="..." />
-            <marker date="1541658528695" expanded="true" signature="953:970" ph="@{...}" />
-            <marker date="1541658528695" expanded="true" signature="1356:1374" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="1612:1630" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="3547:3565" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="3618:3636" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cb8d58a0-b936-47bf-a01c-6c7432fc8b89/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-common/2.6.5/hadoop-common-2.6.5.jar!/org/apache/hadoop/conf/Configuration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="233" column="24" lean-forward="false" selection-start-line="233" selection-start-column="11" selection-end-line="233" selection-end-column="24" />
+        <state relative-caret-position="173">
+          <caret line="85" column="13" lean-forward="false" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
           <folding>
             <marker date="1541483233743" expanded="false" signature="0:104" ph="/.../" />
             <marker date="1541483233743" expanded="false" signature="146:2991" ph="..." />
@@ -1336,134 +1400,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.2.8/hbase-client-1.2.8.jar!/org/apache/hadoop/hbase/client/Result.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/kafkaProducerConfig.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="364" column="40" lean-forward="false" selection-start-line="364" selection-start-column="40" selection-end-line="364" selection-end-column="40" />
-          <folding>
-            <marker date="1541658528695" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1541658528695" expanded="false" signature="154:1096" ph="..." />
-            <marker date="1541658528695" expanded="true" signature="1098:1113" ph="@{...}" />
-            <marker date="1541658528695" expanded="false" signature="1790:1801" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="1813:1819" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="1858:2049" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="2055:2073" ph="/**...*/" />
-            <marker date="1541658528695" expanded="false" signature="2125:2136" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="2177:2183" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="2189:2207" ph="/**...*/" />
-            <marker date="1541658528695" expanded="false" signature="2261:2272" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="2349:2355" ph=" }" />
-            <marker date="1541658528695" expanded="false" signature="2406:2417" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="2453:2459" ph=" }" />
-            <marker date="1541658528695" expanded="false" signature="2526:2537" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="2573:2579" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="2662:2721" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="2821:3001" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="3048:3059" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="3110:3116" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="3195:3254" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="3350:3490" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="3573:3879" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="3908:4094" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="4124:4135" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="4153:4159" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="4165:4183" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="4228:4436" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="4471:4482" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="4544:4550" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="4556:4574" ph="/**...*/" />
-            <marker date="1541658528695" expanded="false" signature="4623:4634" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="4691:4697" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="4703:4721" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="4807:4899" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="4971:5521" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="5599:5899" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="6029:6783" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="6789:6807" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="6893:6989" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="7060:7456" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="7462:7480" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="7618:7750" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="7873:8341" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="8403:8533" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="8611:8853" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="8983:9222" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="9333:9434" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="9597:9890" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="9967:10076" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="10205:10365" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="10439:10545" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="10671:10832" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="10901:10998" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="11119:11230" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="11323:12852" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="12329:12416" ph="compare(l1, l2) → {" />
-            <marker date="1541658528695" expanded="false" signature="12490:12517" ph="}" />
-            <marker date="1541658528695" expanded="true" signature="12934:14092" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="14162:15074" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="15101:15112" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="15178:15184" ph=" }" />
-            <marker date="1541658528695" expanded="false" signature="15214:15225" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="15277:15283" ph=" }" />
-            <marker date="1541658528695" expanded="false" signature="15306:15317" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="15367:15373" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="15404:16116" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="16199:17017" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="17113:18365" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="18425:18801" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="18842:18969" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="19008:19072" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="19100:19261" ph="{...}" />
-            <marker date="1541658528695" expanded="true" signature="19292:19736" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="19768:19779" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="19798:19804" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="19848:19915" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="19945:19956" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="19974:19980" ph=" }" />
-            <marker date="1541658528695" expanded="false" signature="20012:20023" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="20043:20049" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="20055:20073" ph="/**...*/" />
-            <marker date="1541658528695" expanded="true" signature="20078:20102" ph="@{...}" />
-            <marker date="1541658528695" expanded="true" signature="20157:20226" ph="{...}" />
-            <marker date="1541658528695" expanded="false" signature="20297:20308" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="20331:20337" ph=" }" />
-            <marker date="1541658528695" expanded="false" signature="20376:20387" ph=" { " />
-            <marker date="1541658528695" expanded="false" signature="20405:20411" ph=" }" />
-            <marker date="1541658528695" expanded="true" signature="20446:20592" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-897">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        <state relative-caret-position="184">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkSqlApp06.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/util/KafkaParams.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbutil/HBaseUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/kafkaConsumerConfig.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/prj/KafkaProducerMessageShuffle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="106" column="25" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+        <state relative-caret-position="554">
+          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2222#2238#0" expanded="true" />
@@ -1473,34 +1437,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkRddApp02.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkRddApp03.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/MessageResultBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/util/KafkaParams.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp01.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/kafkaProducerConfig.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="368">
+          <caret line="58" column="71" lean-forward="true" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp02.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="506">
+          <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spy/spark/SparkStreamingApp03.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="82" column="23" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/prj/SparkStreamingMessageMerge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>
