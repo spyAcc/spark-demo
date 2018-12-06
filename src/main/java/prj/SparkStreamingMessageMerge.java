@@ -96,9 +96,9 @@ public class SparkStreamingMessageMerge {
          */
         Function3<String, Optional<List<MessageBean>>, State<List<MessageBean>>, Tuple2<String, String>> mapFuc =
                 /**
-                 * w:key值
-                 * one： 新的value值
-                 * state： 上次传来的value值
+                 * k:key值
+                 * newMsg： 新的value值
+                 * oldMsg： 上次传来的value值
                  */
                 (k, newMsg, oldMsg) -> {
 
@@ -116,7 +116,7 @@ public class SparkStreamingMessageMerge {
 
                         //判断完整性
                         int s = oldCom.size();
-                        if(s == oldCom.get(s-1).getSort() - 1) {
+                        if(s == oldCom.get(0).getLen()) {
 
                             //拼接报文
                             for(MessageBean mb: oldCom) {
@@ -124,6 +124,13 @@ public class SparkStreamingMessageMerge {
                                 sb.append(mb.getValue());
 
                             }
+                            logger.info("----------------------------------------------------");
+                            logger.info("----------------------------------------------------");
+                            logger.info("----------------------------------------------------");
+                            logger.info(sb.toString());
+                            logger.info("----------------------------------------------------");
+                            logger.info("----------------------------------------------------");
+                            logger.info("----------------------------------------------------");
 
                             oldMsg.remove();
 

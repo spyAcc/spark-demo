@@ -61,4 +61,13 @@ public class MessageBean implements Serializable, Comparable<MessageBean> {
         return this.getSort() - mb.getSort();
     }
 
+    @Override
+    public String toString() {
+        return "MessageBean{" +
+                "key='" + key + '\'' +
+                ", value='" + value + '\'' +
+                ", sort=" + sort +
+                ", len=" + len +
+                '}';
+    }
 }

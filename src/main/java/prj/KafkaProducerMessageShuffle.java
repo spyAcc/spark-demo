@@ -89,14 +89,20 @@ public class KafkaProducerMessageShuffle {
         int count = kafkaProducerMessageShuffle.getCountMessageShuffle();
 
         int start = 0;
-        int lenth = 200;
+        int lenth = 1000;
 
         ObjectMapper mapper = new ObjectMapper();
 
+        System.out.println("报文数据共：" + count);
+
         while (start < count) {
+
+            System.out.println("发送一批数据：");
+
             List<MessageBean> sendDatas = kafkaProducerMessageShuffle.getMessageShuffle(start, lenth);
 
             for (MessageBean mb: sendDatas) {
+                System.out.println(mb.toString());
                 producer.send(new ProducerRecord<>(topic, mapper.writeValueAsString(mb)));
             }
 
