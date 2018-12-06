@@ -3,7 +3,6 @@ package prj;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spy.spark.util.KafkaParams;
 import data.MessageBean;
-import data.MessageResultBean;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.Optional;
@@ -18,8 +17,9 @@ import org.apache.spark.streaming.kafka010.LocationStrategies;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Tuple2;
-
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class SparkStreamingMessageMerge {
 
@@ -40,6 +40,9 @@ public class SparkStreamingMessageMerge {
 
         KafkaParams kafkaParams = new KafkaParams();
 
+        /**
+         * json报文流输入
+         */
         JavaInputDStream<ConsumerRecord<String, String>> javaDS
                 = KafkaUtils.createDirectStream(
                 jsc,
@@ -48,33 +51,39 @@ public class SparkStreamingMessageMerge {
         );
 
 
+        /**
+         * 解析json为bean， 组成tuple2的pair
+         */
         JavaPairDStream<String, MessageBean> pairStream = javaDS.mapToPair(record -> {
             ObjectMapper obm = new ObjectMapper();
             MessageBean mb = obm.readValue(record.value(), MessageBean.class);
             return new Tuple2<>(mb.getKey(), mb);
         });
 
-        JavaPairDStream<String, Iterable<MessageBean>> groupStream = pairStream.groupByKey();
+        /**
+         * 根据key进行分组
+         */
+        JavaPairDStream<String, List<MessageBean>> groupStream = pairStream.groupByKey()
+                .mapToPair(tuple -> {
+
+                    Iterable<MessageBean> it = tuple._2;
+
+                    List<MessageBean> listblock = new ArrayList<>();
+
+                    for(MessageBean mb : it) {
+                        listblock.add(mb);
+                    }
 
 
-        JavaPairDStream<String, MessageResultBean> jDstream = groupStream.mapToPair(tuple -> {
+                    return new Tuple2<>(tuple._1, listblock);
+                });
 
-            Iterable<MessageBean> it = tuple._2;
 
-            //字符串拼接
-            StringBuffer sb = new StringBuffer();
-
-            for (MessageBean mb: it) {
-                sb.append(mb.getValue());
-            }
-
-            MessageResultBean mrb = new MessageResultBean();
-            mrb.setKey(tuple._1);
-            mrb.setValue(sb.toString());
-
-            return new Tuple2<>(mrb.getKey(), mrb);
-        });
-
+        /**
+         *
+         * 将group做状态流
+         *
+         */
 
 
         /**
@@ -85,23 +94,60 @@ public class SparkStreamingMessageMerge {
          * 4： 返回值
          *
          */
-        Function3<String, Optional<Integer>, State<Integer>, Tuple2<String, Integer>> mapFuc =
+        Function3<String, Optional<List<MessageBean>>, State<List<MessageBean>>, Tuple2<String, String>> mapFuc =
                 /**
                  * w:key值
                  * one： 新的value值
                  * state： 上次传来的value值
                  */
-                (w, one, state) -> {
+                (k, newMsg, oldMsg) -> {
 
-                    int sum = one.orElse(0) + (state.exists() ? state.get(): 0);
-                    Tuple2<String, Integer> out = new Tuple2<>(w, sum);
-                    state.update(sum);
+                    List<MessageBean> newCom = newMsg.orNull();
+
+                    StringBuilder sb = new StringBuilder();
+
+                    if(newCom != null) {
+                        List<MessageBean> oldCom = oldMsg.exists()? oldMsg.get(): new ArrayList<MessageBean>();
+
+                        oldCom.addAll(newCom);
+
+                        Collections.sort(oldCom);
+
+
+                        //判断完整性
+                        int s = oldCom.size();
+                        if(s == oldCom.get(s-1).getSort() - 1) {
+
+                            //拼接报文
+                            for(MessageBean mb: oldCom) {
+
+                                sb.append(mb.getValue());
+
+                            }
+
+                            oldMsg.remove();
+
+                        } else {
+                            oldMsg.update(oldCom);
+                        }
+
+
+                    }
+
+                    Tuple2<String, String> out = new Tuple2<>(k, sb.toString());
                     return out;
+
                 };
 
 
-        JavaMapWithStateDStream<String, Integer, Integer, Tuple2<String, Integer>> wordcount
-                = jDstream.mapWithState(StateSpec.function(mapFuc));
+        JavaMapWithStateDStream<String, List<MessageBean>, List<MessageBean>, Tuple2<String, String>> stateStream
+                = groupStream.mapWithState(StateSpec.function(mapFuc));
+
+
+        /**
+         * 打印结果
+         */
+        stateStream.print();
 
 
 
