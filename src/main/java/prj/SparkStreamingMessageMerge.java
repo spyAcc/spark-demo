@@ -124,13 +124,13 @@ public class SparkStreamingMessageMerge {
                                 sb.append(mb.getValue());
 
                             }
-                            logger.info("----------------------------------------------------");
-                            logger.info("----------------------------------------------------");
-                            logger.info("----------------------------------------------------");
-                            logger.info(sb.toString());
-                            logger.info("----------------------------------------------------");
-                            logger.info("----------------------------------------------------");
-                            logger.info("----------------------------------------------------");
+//                            logger.info("----------------------------------------------------");
+//                            logger.info("----------------------------------------------------");
+//                            logger.info("----------------------------------------------------");
+//                            logger.info(sb.toString());
+//                            logger.info("----------------------------------------------------");
+//                            logger.info("----------------------------------------------------");
+//                            logger.info("----------------------------------------------------");
 
                             oldMsg.remove();
 
@@ -154,7 +154,24 @@ public class SparkStreamingMessageMerge {
         /**
          * 打印结果
          */
-        stateStream.print();
+
+        stateStream.foreachRDD(rdd -> {
+
+            rdd.foreachPartition(tuple -> {
+
+                while(tuple.hasNext()) {
+
+                    Tuple2<String, String> t = tuple.next();
+                    if(t._2 != null && !"".equals(t._2)) {
+                        logger.info(t._1 + ":  " + t._2);
+                    }
+
+                }
+
+            });
+
+        });
+
 
 
 
