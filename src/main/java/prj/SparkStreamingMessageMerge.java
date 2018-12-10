@@ -5,6 +5,7 @@ import com.spy.spark.util.KafkaParams;
 import data.MessageBean;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.Function3;
 import org.apache.spark.streaming.Durations;
@@ -14,6 +15,7 @@ import org.apache.spark.streaming.api.java.*;
 import org.apache.spark.streaming.kafka010.ConsumerStrategies;
 import org.apache.spark.streaming.kafka010.KafkaUtils;
 import org.apache.spark.streaming.kafka010.LocationStrategies;
+import org.apache.spark.util.LongAccumulator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Tuple2;
@@ -39,6 +41,14 @@ public class SparkStreamingMessageMerge {
         jsc.checkpoint(checkpointdir);
 
         KafkaParams kafkaParams = new KafkaParams();
+
+        /**
+         * 定义累加器
+         */
+        final LongAccumulator lc = new LongAccumulator();
+
+        jsc.sparkContext().sc().register(lc);
+
 
         /**
          * json报文流输入
@@ -118,19 +128,14 @@ public class SparkStreamingMessageMerge {
                         int s = oldCom.size();
                         if(s == oldCom.get(0).getLen()) {
 
+                            lc.add(1L);
+
                             //拼接报文
                             for(MessageBean mb: oldCom) {
 
                                 sb.append(mb.getValue());
 
                             }
-//                            logger.info("----------------------------------------------------");
-//                            logger.info("----------------------------------------------------");
-//                            logger.info("----------------------------------------------------");
-//                            logger.info(sb.toString());
-//                            logger.info("----------------------------------------------------");
-//                            logger.info("----------------------------------------------------");
-//                            logger.info("----------------------------------------------------");
 
                             oldMsg.remove();
 
@@ -151,11 +156,21 @@ public class SparkStreamingMessageMerge {
                 = groupStream.mapWithState(StateSpec.function(mapFuc));
 
 
+
+
         /**
          * 打印结果
          */
 
         stateStream.foreachRDD(rdd -> {
+
+            logger.info("--------------------------------------");
+            logger.info("--------------------------------------");
+            logger.info("--------------------------------------");
+            logger.info("" + lc.value());
+            logger.info("--------------------------------------");
+            logger.info("--------------------------------------");
+            logger.info("--------------------------------------");
 
             rdd.foreachPartition(tuple -> {
 
