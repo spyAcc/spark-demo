@@ -19,9 +19,17 @@
     <hbase.version>1.2.8</hbase.version>
     <kafka.version>0.10.2.2</kafka.version>
     <zookeeper.version>3.4.5</zookeeper.version>
+    <es.version>6.5.4</es.version>
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>transport</artifactId>
+      <version>${es.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-client</artifactId>
