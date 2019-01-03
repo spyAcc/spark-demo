@@ -2,6 +2,9 @@ package es;
 
 
 import data.TradeBean;
+import dbutil.EsUtil;
+import org.elasticsearch.action.delete.DeleteRequestBuilder;
+import org.elasticsearch.client.transport.TransportClient;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,7 +49,7 @@ public class EsApp01 {
 
 //        testSearch();
         System.out.println("start");
-        testSearch();
+        delete();
         System.out.println("end");
 
 
@@ -75,6 +78,13 @@ public class EsApp01 {
             e.printStackTrace();
         }
 
+
+    }
+
+    public static void delete() {
+
+        TransportClient client = EsUtil.getInstance().getEsClient();
+        client.admin().indices().prepareDelete("person").execute().actionGet();
 
     }
 
