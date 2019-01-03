@@ -2,6 +2,8 @@ package es;
 
 import data.TradeBean;
 import dbutil.EsUtil;
+import org.elasticsearch.action.bulk.BulkRequestBuilder;
+import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
@@ -13,9 +15,37 @@ import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.SearchHit;
 
 import java.io.IOException;
+import java.util.List;
 
 public class TradeDataUtil {
 
+
+    public static boolean createIndex(String index, String type, List<TradeBean> datas) throws IOException {
+
+        TransportClient client = EsUtil.getInstance().getEsClient();
+
+        BulkRequestBuilder bkbuild = client.prepareBulk();
+
+
+        for (TradeBean tb: datas) {
+
+            bkbuild.add(client.prepareIndex(index, type).setSource(XContentFactory.jsonBuilder()
+                    .startObject()
+                    .field("tradeId", tb.getTradeId())
+                    .field("tradeType", tb.getTradeType())
+                    .field("tradeTime", tb.getTimestamp())
+                    .endObject()));
+
+        }
+
+
+        BulkResponse response = bkbuild.execute().actionGet();
+        if (response == null || response.hasFailures()) {
+            return false;
+        }
+
+        return true;
+    }
 
     public static boolean createIndex(String index, String type, TradeBean trade) throws IOException {
 
@@ -81,11 +111,13 @@ public class TradeDataUtil {
         TransportClient client = EsUtil.getInstance().getEsClient();
 
         SearchResponse rs = client.prepareSearch(index).setTypes(type)
-                .setQuery(QueryBuilders.matchQuery("tradeType", query))
+                .setQuery(QueryBuilders.matchQuery("tradeType", query)).setSize(200)
                 .get();
 
 
         SearchHit [] hits = rs.getHits().getHits();
+
+        System.out.println(hits.length);
 
         for (SearchHit hit: hits) {
             System.out.println(hit.getSourceAsString());

@@ -44,8 +44,10 @@ public class EsApp01 {
 
     public static void main(String[] args) {
 
+//        testSearch();
+        System.out.println("start");
         testSearch();
-
+        System.out.println("end");
 
 
 
@@ -60,6 +62,21 @@ public class EsApp01 {
 
     }
 
+
+    public static void testCreateBluk() {
+
+        EsApp01 esApp01 = new EsApp01();
+
+        List<TradeBean> list = esApp01.getTradeBeanList(50);
+
+        try {
+            TradeDataUtil.createIndex(index, type, list);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
 
     public static void testCreate() {
